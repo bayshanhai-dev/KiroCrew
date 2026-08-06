@@ -82,6 +82,7 @@ import AppDetailPage from './pages/AppDetailPage'
 import MigrationPage from './pages/MigrationPage'
 import MigrationCheck from './components/MigrationCheck'
 import BuiltinAppRoute from './apps/BuiltinAppRoute'
+import { VoiceInputProvider } from './providers/VoiceInputProvider'
 import { getBuiltinIcon } from './apps/builtinIcons'
 import { getThemeBranding } from './themeBranding'
 import { getTopBarWidgets } from './apps/topBarWidgets'
@@ -1569,6 +1570,7 @@ export default function App() {
   )
 
   return (
+    <VoiceInputProvider>
     <ZoomProvider>
     <WsContext.Provider value={{ subscribeLogs, subscribeSubagents, forceReconnect }}>
     {isPopout ? (
@@ -2557,5 +2559,6 @@ export default function App() {
     ))}
     <Lightbox />
     </ZoomProvider>
+    </VoiceInputProvider>
   )
 }
